@@ -12,18 +12,18 @@ I used two HCC-associated missense variants, **TP53 R249S** and **CTNNB1 S45P**,
 
 The analysis considered overlapping wild-type (WT) and mutant (MUT) peptides of 15, 18 and 21 amino acids, with **HLA-DRB1*01:01** and **HLA-DRB1*04:01** used as hypothetical allele settings. Neither allele was linked to a typed patient, and tumour expression was not verified. Predictions came from **NetMHCIIpan 4.3k** (PEPTIDE input, EL+BA output, context encoding off).
 
-## What I did
+## Research workflow
 
-| Stage | Work undertaken | What the results can support |
+| Stage | Work undertaken | Output |
 |---|---|---|
-| Phase 0 | Set up and recorded the NetMHCIIpan input/output workflow | Reproducible setup documentation, not biological evidence |
-| Phase 1 | Generated 432 WT/MUT peptide–HLA prediction records, yielding 216 matched comparisons | Predictions for two variants; overlapping windows are not independent biological cases |
-| Phase 2 | Compared three selection rules fixed after the pilot | Differences in selected lists, not differences in predictive performance |
-| Phase 3 | Reviewed exact-sequence IEDB/CEDAR results against their experimental sources | Attribution of published assay records, with unresolved links made explicit |
-| Phase 3C | Compared predictions with published HOM2 competition-binding categories for 13 other HCC peptides | A small, preselected retrospective comparison, not independent model validation |
-| Phase 4 | Developed four case-specific experimental proposals and conditional decision points | Plans for follow-up work; no experiments were performed |
+| Phase 0 | Recorded the NetMHCIIpan 4.3k settings and prediction workflow | Documented prediction settings and input/output procedures |
+| Phase 1 | Generated 432 WT and mutant peptide–HLA prediction records | 216 matched WT–mutant comparisons |
+| Phase 2 | Applied three candidate selection rules defined after the exploratory pilot | Ranked candidate lists and analysis of overlap between strategies |
+| Phase 3 | Reviewed exact-sequence IEDB/CEDAR results and examined the corresponding experimental sources | Six assay annotations covering three TP53 WT control peptides, with unresolved assay attribution documented |
+| Phase 3C | Compared NetMHCIIpan predictions with published HOM2 binding classifications for 13 preselected HCC peptides | Retrospective comparison of predicted ranks and experimental binding categories |
+| Phase 4 | Developed four candidate-specific experimental proposals with defined decision criteria | Proposed follow-up experiments and decision matrix; no laboratory experiments performed |
 
-### Three ways to select candidates
+### Candidate selection strategies
 
 **A — Absolute binding rank.** Select peptides with low mutant `%Rank_BA`, using the fixed tie-breaks.
 
@@ -68,7 +68,7 @@ The proposed work separates direct peptide–HLA-II binding, peptide-pulsed CD4 
 
 **Reproducibility:** Phase 2 was rerun against the frozen comparison file and rules, with byte-for-byte agreement for the ranked output on 13 November 2026. The public repository does not contain all the original web-service outputs, source PDFs or archived database responses needed to reproduce every earlier stage. See the reproducibility guide for the precise boundary.
 
-## Important qualifications
+## Limitations and interpretation
 
 The historical comparison contains unresolved source-annotation differences: **ELF2 D291E versus D291J**, **ARHGEF40 versus ARHGEF4** for the SPE example, and a legacy **DRB1*01:02** prediction where the present comparison uses **DRB1*01:01**. These have been retained as provenance uncertainties rather than silently resolved. BA and EL percentile ranks are different model outputs; the web service's `BindLevel` should not be treated as a BA-only threshold.
 
