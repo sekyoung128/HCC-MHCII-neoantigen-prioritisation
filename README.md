@@ -2,8 +2,6 @@
 
 *A computational case study of peptide ranking, published evidence and proposed experiments*
 
-> **Study status — 13 November 2026:** The computational analyses and review of published evidence are complete. The proposed experiments have not been carried out. This work does not establish validated HCC MHC-II neoantigens, mutant-selective CD4 T-cell responses or vaccine efficacy.
-
 ## Overview
 
 A favourable peptide–MHC class II binding prediction is a useful starting point, but it does not show that a peptide is presented by a tumour or recognised by CD4 T cells. Experimental peptide binding, T-cell recognition, HLA restriction and natural antigen presentation require separate evidence.
