@@ -1,0 +1,21 @@
+PHASE 1 EXTENSION DESIGN VALIDATION PASSED
+Study status: exploratory extension (planned after inspecting pilot)
+Cancer context: HCC; mutations: CTNNB1 S45P, TP53 R249S
+Source: validated canonical UniProt FASTAs from original Phase 1
+Peptide window lengths: 15, 18, 21 aa
+Window rule: all peptide windows of given length spanning mutated residue
+Candidate interpretation: individual windows overlap; not independent mutations
+Expected per gene: 15+18+21=54 WT/MUT pairs, 108 unique sequences
+Total: 108 pairs; 216 peptide sequences; 2 HLA = 432 predictions
+Original 12 pilot peptide sequences: all preserved within extension
+HLA scenarios: DRB1_0101, DRB1_0401 (not patient HLA typing)
+Core filtering: none; later examine whether predicted 9-aa core contains mutation
+Outputs are prediction inputs only; experimental validation not performed
+Reference FASTA SHA256:
+CTNNB1 P35222: 208e8ceaf5c29d60892f7b38efcf0b1635e4bb34a77f6edaff035ba0c4bf0bf1
+TP53 P04637: 59aace7211b64e5918ef6547fc48d6419a134fa91f158415d598d3416882f063
+Files:
+ raw/phase1_extension/CTNNB1_input.txt (108 sequences)
+ raw/phase1_extension/TP53_input.txt (108 sequences)
+ results/phase1_extension/peptide_manifest.csv (216 rows)
+ results/phase1_extension/pair_manifest.csv (108 rows)

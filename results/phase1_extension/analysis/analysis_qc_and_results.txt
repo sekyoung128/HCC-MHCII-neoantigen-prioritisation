@@ -1,0 +1,33 @@
+PHASE 1 EXTENSION PREDICTION VALIDATION PASSED
+Status: post-pilot exploratory extension; NOT independent predictor validation
+Predictor: NetMHCIIpan-4.3k | PEPTIDE | EL+BA (per output header)
+Source variants: HCC-associated CTNNB1 S45P, TP53 R249S
+HLA: DRB1_0101; DRB1_0401 (hypothetical; no patient HLA typing)
+Model rows: 432; unique peptides: 216
+WT/MUT-HLA matched comparisons: 216
+Summary strata (gene x HLA x length): 12
+Pilot prediction cross-check: 24/24 overlapping peptide–HLA rows consistent (largest rank difference 0.000)
+MUT BA <= 1%: 0 of 216
+MUT BA <= 5%: 3 of 216
+MUT EL <= 1%: 0 of 216
+MUT EL <= 5%: 4 of 216
+Both MUT BA and EL <= 5%: 2 of 216
+BA delta positive: 23 of 216
+EL delta positive: 118 of 216
+Predicted core offset changed: 41 of 216
+Mutation inside predicted MUT core: 64 of 216
+Minimum absolute MUT BA %Rank: 4.35
+Minimum absolute MUT EL %Rank: 2.95
+Input SHA-256:
+  CTNNB1_input.txt: a048c2ce4545f9b723b6f41d6e95b550ff8f13ab16322f7e80a0b604170278ef
+  TP53_input.txt: 56606ba73ddd10196931ecb77db9aa8218e5b375c9650d02cbcd55af57fecb18
+Output SHA-256:
+  CTNNB1_output.txt: 2e50c25fe8ca7fd12b03020d12bc5700691d4117c5f3bbf1118b8111f967f310
+  TP53_output.txt: e00faecd548fa36821603509f9ec66ad5ef00107923fa168e18bf93ab50a7896
+Interpretation: lower percentile rank means more favourable predictor score;
+  delta = WT rank minus MUT rank (positive = lower MUT rank).
+  BA and EL endpoints differ; do not equate shifts with immunogenicity.
+  Many windows overlap; 216 pairs are NOT 216 independent mutations.
+  These windows/HLA contexts were explored after inspecting the pilot.
+  No measured binding, natural presentation or CD4 functional confirmation.
+Figures created: 8

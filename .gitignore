@@ -1,0 +1,31 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# macOS
+.DS_Store
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Temporary archives
+*.zip
+*.tar.gz
+
+# Third-party source documents and raw data
+*.pdf
+*.xlsx
+*.xls
+raw/
+phase3_historical_analysis_bundle/
+
+# Unreviewed evidence exports
+results/phase3/probe_only/
+results/phase3/iedb_exact_search/
+results/phase3/manual_review/
+*.jsonl

@@ -1,0 +1,22 @@
+{
+  "study": "Phase 2 - HCC MHC-II candidate-selection decision analysis",
+  "status": "post-pilot method lock; descriptive/exploratory; NOT prospective preregistration or model validation",
+  "method_lock_date": "2026-11-11",
+  "source_filename": "wt_mut_comparison_216.csv",
+  "source_sha256": "7b1cebf1d4c282a1041c7c94bd15392ee99cc8f78de9fd8c7d716415d6415b6f",
+  "expected_rows": 216,
+  "expected_gene_variants": {"CTNNB1": "S45P", "TP53": "R249S"},
+  "expected_HLA": ["DRB1_0101", "DRB1_0401"],
+  "expected_lengths": [15, 18, 21],
+  "primary_topk": [5, 10, 20],
+  "primary_unit": "one WT/MUT mutation-spanning peptide window x one HLA; overlapping windows not independent",
+  "strategy_A": "Sort lowest mutant BA percentile rank; tie-break lowest mutant EL percentile rank, then candidate_id",
+  "strategy_B": "Prioritise positive WT-minus-MUT BA delta; within sign class sort lowest mutant BA rank; then largest BA delta; then candidate_id. A negative-delta candidate can enter only after all positive-delta candidates.",
+  "strategy_C": "Deterministic round-robin without replacement across (1) BA/EL mutation-shift direction conflict, (2) predicted core-offset-change cases, (3) cross-HLA BA sensitivity. Then a fixed EL-rank fallback. C is experimental-question selection, NOT binding quality or vaccine suitability.",
+  "C1_within_queue": "Opposite nonzero BA and EL delta signs; greatest |deltaBA-deltaEL|, then lowest min(mutant BA, mutant EL), then candidate_id",
+  "C2_within_queue": "Predicted core offset changed; mutation inside predicted MUT core first, then lowest mutant BA rank, then greatest |deltaBA-deltaEL|, then candidate_id",
+  "C3_within_queue": "All rows considered for HLA sensitivity; opposite BA-delta signs across the two HLA first, then largest absolute difference in mutant BA rank across HLA, then lowest mutant BA rank, then candidate_id",
+  "C_fallback": "Remaining rows sorted by lowest mutant EL rank, then candidate_id",
+  "hypothesis_safety": "No experimental binding, presentation or CD4 outcomes used in ranking. No claims of immunogenicity, neoantigen validation, strategy superiority or model performance.",
+  "sensitivity": "Report top-K grouping by gene/HLA, unique predicted MUT cores and core-collapsed top-10 diversity; do not treat overlapping windows as biological replicates."
+}

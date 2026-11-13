@@ -1,0 +1,38 @@
+PHASE 3C HISTORICAL HCC COMPARISON — QC PASSED
+Status: descriptive / exploratory; NOT independent predictor validation
+Source: Repáraz et al., J Immunother Cancer (2022), DOI 10.1136/jitc-2021-003978
+Predictions: NetMHCIIpan-4.3k, EL+BA, PEPTIDE mode, HLA DRB1_0101
+26/26 TXT predictions cross-checked with original tab-separated XLS;
+26/26 peptides match frozen manifest; 13/13 pairs differ at one residue.
+13 mutation-derived candidates: 10 published HOM2 BS>0.5 binders; 3 non-binders.
+
+MUT %Rank_BA <= 5: 4/10 experimental binders, 1/3 experimental non-binders.
+MUT %Rank_BA <= 10: 7/10 experimental binders, 2/3 experimental non-binders.
+MUT %Rank_EL <= 5: 5/10 experimental binders, 0/3 experimental non-binders.
+MUT %Rank_EL <= 10: 5/10 experimental binders, 1/3 experimental non-binders.
+MUT BA rank improved versus WT: 11/13 (8/10 binders and 3/3 non-binders).
+MUT EL rank improved versus WT: 9/13.
+Mutation lies in predicted mutant 9-aa core: 12/13.
+
+Examples: SQL experimental non-binder despite MUT BA rank 4.83;
+RLV experimental binder despite MUT BA rank 16.79;
+AQR experimental binder despite MUT BA rank 10.15 and negative delta BA.
+
+CRITICAL INTERPRETIVE LIMITS
+- Paper preselected candidates using NetMHCIIpan 3.2; enrichment/selection bias.
+- Only 13 candidates, 3 experimental non-binders; no credible generalizable metrics.
+- Paper reports HLA-DRB1*01 / HOM2; exact suballele 01:01 cannot be assumed.
+- Experimental outcome is binary HOM2 competition binding BS>0.5;
+  not IC50, not CD4 functional response, and not confirmed natural presentation.
+- Training-data overlap with NetMHCIIpan 4.3k not excluded.
+- Historical cohort is kept fully separate from Phase 1–2 HCC S45P/R249S predictions.
+- Published sequence/gene naming discrepancies need source provenance notes.
+
+INPUT SHA-256
+netmhciipan_txt: 52eb5a72cb4db5465c3ec4ef342d3d31585a9093393918e03ed2fa5b9d7cc71b
+netmhciipan_xls: 2fb0c32d33ce6f972a66e40fad29f04630e4b131ca73450e463f4fe6e06d5cae
+manifest: 24d991b318efb2319b3eccefffee827f5aa3c3f2651d1b9ed87d47fb619f44e4
+published_binary_labels: a60d4c7ba60ceccf36e7932a6ea47f4809fca8ba344ec36c87aea7f575005a0b
+FINAL INTERPRETATION: Limited qualitative concordance with informative discrepancies; not a robust external validation.
+GO: archive this as a descriptive case study and proceed to Phase 4 experimental hypotheses.
+NO-GO: claim that strategy B or NetMHCIIpan-4.3k is experimentally validated or superior from these 13 preselected cases.
